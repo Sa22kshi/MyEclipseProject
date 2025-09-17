@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+  <!-- Add Trainer -->
+  <servlet>
+    <servlet-name>AddTrainerServlet</servlet-name>
+    <servlet-class>com.examplee.AddTrainerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddTrainerServlet</servlet-name>
+    <url-pattern>/addTrainer</url-pattern>
+  </servlet-mapping>
+
+  <!-- View Trainers -->
+  <servlet>
+    <servlet-name>ViewTrainerServlet</servlet-name>
+    <servlet-class>com.examplee.ViewTrainerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewTrainerServlet</servlet-name>
+    <url-pattern>/viewTrainers</url-pattern>
+  </servlet-mapping>
+
+  <!-- Delete Trainer -->
+  <servlet>
+    <servlet-name>DeleteTrainerServlet</servlet-name>
+    <servlet-class>com.examplee.DeleteTrainerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteTrainerServlet</servlet-name>
+    <url-pattern>/deleteTrainer</url-pattern>
+  </servlet-mapping>
+
+</web-app>

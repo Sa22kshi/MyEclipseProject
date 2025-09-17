@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Trainers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .trainer-group {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        input[type="text"], input[type="email"] {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button, input[type="submit"] {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #4facfe;
+            color: white;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover, input[type="submit"]:hover {
+            background: #00c6ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add Trainers</h2>
+        <form action="addTrainer" method="post" id="trainerForm">
+            <div id="trainers">
+                <div class="trainer-group">
+                    Name: <input type="text" name="name" required><br>
+                    Email: <input type="email" name="email" required><br>
+                    Skill: <input type="text" name="skill" required><br>
+                </div>
+            </div>
+            <button type="button" onclick="addTrainer()">➕ Add More</button><br>
+            <input type="submit" value="✅ Submit">
+        </form>
+    </div>
+
+    <script>
+        function addTrainer() {
+            const trainersDiv = document.getElementById("trainers");
+            const newGroup = document.createElement("div");
+            newGroup.classList.add("trainer-group");
+            newGroup.innerHTML = `
+                Name: <input type="text" name="name" required><br>
+                Email: <input type="email" name="email" required><br>
+                Skill: <input type="text" name="skill" required><br>
+            `;
+            trainersDiv.appendChild(newGroup);
+        }
+    </script>
+</body>
+</html>
+
